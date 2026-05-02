@@ -1,5 +1,5 @@
 import { optionalMediaService } from "../../core/express/service/media";
-import { ITheme } from "../../common-shared/theme/types";
+import { ITheme } from "../../theming-shared/theme/types";
 import { basicCrudService } from "../../core/express/service/common";
 import { Setting } from "../../common/setting/service";
 

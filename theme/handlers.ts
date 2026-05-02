@@ -1,5 +1,5 @@
 import { pipeTo } from "ts-functional";
-import { ITheme } from "../../common-shared/theme/types";
+import { ITheme } from "../../theming-shared/theme/types";
 import { Query } from "../../core-shared/express/types";
 import { getBody, getBodyParam, getFile, getParam } from "../../core/express/extractors";
 import { HandlerArgs } from "../../core/express/types";

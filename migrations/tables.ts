@@ -5,6 +5,7 @@ import { Knex } from "knex";
     table.string("name").notNullable();
     table.text("description");
     table.string("imageUrl");
+    table.json("globalStyles");
     table.json("json");
     table.boolean("enabled").notNullable().defaultTo(false);
  }
