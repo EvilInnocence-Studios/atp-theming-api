@@ -8,6 +8,8 @@ export const themingMigrations = [init, addGlobalStyle];
 export const setupMigrations = [init];
 
 FieldRegistry.register(
-    "themes",
-    ["name", "description", "imageUrl", "globalStyles", "json", "enabled"]
+    "themes", {
+        create: ["name", "description", "imageUrl", "globalStyles", "json", "enabled"],
+        update: ["name", "description", "imageUrl", "globalStyles", "json", "enabled"],
+    }
 );
