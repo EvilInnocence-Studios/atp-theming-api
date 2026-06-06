@@ -1,4 +1,4 @@
-import { FieldRegistry } from "@core/express/util";
+import { FieldRegistry } from "../core/express/util";
 import { init } from "../theming/migrations/00-init";
 import { addGlobalStyle } from "../theming/migrations/01-addGlobalStyle";
 

@@ -2,7 +2,7 @@ import { database } from "../../core/database";
 import { IMigration } from "../../core/dbMigrations";
 
 const db = database();
-console.log('test');
+
 export const addGlobalStyle:IMigration = {
     name: "addGlobalStyle",
     module: "theming",
