@@ -1,10 +1,15 @@
-import { pipeTo } from "ts-functional";
+import { pipe, pipeTo } from "ts-functional";
 import { ITheme } from "../../theming-shared/theme/types";
 import { Query } from "../../core-shared/express/types";
 import { getBody, getBodyParam, getFile, getParam } from "../../core/express/extractors";
 import { HandlerArgs } from "../../core/express/types";
 import { CheckPermissions } from "../../uac/permission/util";
 import { Theme } from "./service";
+
+const removeCacheBust = (query:Query):Query => {
+    delete query["cacheBust"];
+    return query;
+}
 
 class ThemeHandlerClass {
     @CheckPermissions("theme.create")
@@ -14,7 +19,10 @@ class ThemeHandlerClass {
 
     @CheckPermissions("theme.view")
     public search (...args:HandlerArgs<undefined>):Promise<ITheme[]> {
-        return pipeTo(Theme.search, getBody<Query>)(args);
+        return pipeTo(
+            Theme.search,
+            pipe(getBody<Query>, removeCacheBust)
+        )(args);
     }
 
     @CheckPermissions("theme.view")
