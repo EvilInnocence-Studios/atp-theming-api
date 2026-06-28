@@ -4,7 +4,7 @@ import { addGlobalStyle } from "../theming/migrations/01-addGlobalStyle";
 
 export { apiConfig } from "./endpoints";
 
-export const themingMigrations = [init, addGlobalStyle];
+export const migrations = [init, addGlobalStyle];
 export const setupMigrations = [init];
 
 FieldRegistry.register(
